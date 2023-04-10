@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+
+
+
+
+* {
+   
+   
+    font-family: 'Poppins', sans-serif;
+}
+section{ 
+    background-repeat: no-repeat; 
+    background-position-x: left; 
+    background-position: top;
+margin-top: 5%;}
+    h1, h2, h3,h4,h5,h6{font-family: 'Chewy', cursive;}
+    h1{margin-bottom: 5%;}
+    .box-fichaje{ justify-content: center; display: flex;}
+    .btnAzul{ background: #1C9BD5; color: white; border: none; padding: 7px; margin-bottom:50px;}
+    @media (max-width: 767px) {
+        /* Estilos que se aplicarán en dispositivos con ancho de pantalla máximo de 767px (por ejemplo, dispositivos móviles) */
+        /* Aquí puedes colocar tus estilos para dispositivos móviles */
+        #bird1{display: none;}
+        #bird2{width:30%}
+        
+      }
