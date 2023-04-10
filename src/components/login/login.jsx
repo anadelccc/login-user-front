@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from '../../api/axios';
+import './login.css'
+import Logo from '../../images/logoAventurero.png'
+import GolondrinaL from '../../images/birdLeft.png'
+import GolondrinaR from '../../images/birdRight.png'
 
 const LOGIN_URL = '/api/login_check';
 
@@ -43,38 +47,53 @@ function Login() {
 
   return (
     <div>
+         <header>
+           
+           <img src={GolondrinaL} id="bird1" />
+           <img src={Logo} />
+          <img src={GolondrinaR} id="bird2" /> 
+      </header>
         {success ? (
             <section className='success'>
                 <h2>¡Has iniciado sesión!</h2>
-                <a href='#' className='btn-login'>Ve al inicio</a>
+                <a href='#' className='btn-login'>Ve a las cards</a>
             </section> 
         ) : (
             <section>
                 <h1>Login</h1>
                     <div className='box-fichaje'>
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor='username'>username</label>
-                            <input
-                                type='text'
-                                id='username'
-                                autoComplete='off'
-                                onChange={(e) => setUsername(e.target.value)}
-                                value={username}
-                                required
-                            />
-
-                            <label htmlFor='password'>Contraseña</label>
-                            <input
-                                type='password'
-                                id='password'
-                                onChange={(e) => setPassword(e.target.value)}
-                                value={password}
-                                required
-                            />
-                            <button className='btn'>Entrar</button>
+                        <div  className="mb-3">
+                            <label htmlFor='username' className="form-label" >Usuario</label>
+                                <input
+                                    type='text'
+                                    id='username'
+                                    autoComplete='off'
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    value={username}
+                                    required
+                                    className='form-control'
+                                   
+                                />
+                            </div>
+                            <div  className="mb-3">
+                                <label htmlFor='password' className="form-label" >Contraseña</label>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={password}
+                                    required
+                                    className='form-control'
+                                    minLength={6} 
+                                />
+                            </div>
+                            <button className='btnAzul'>Entrar</button>
+                            <a href="#" className='btn-password clearall'>Recuperar Contraseña</a>
                         </form>
-
-                        <a href="#" className='btn-password'>Recuperar Contraseña</a>
+                        <div  className="mb-3">
+                       
+                        </div>
                     </div>
             </section>
         )}
